@@ -5,13 +5,14 @@
 //  Created by Ilya Vinogradov on 30.07.2022.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 
 class CountdownViewModel: ObservableObject {
-    let context = PersistenceController.shared.container.viewContext
     @Published var countdowns: [Countdown] = []
+
+    let context = PersistenceController.shared.container.viewContext
     private var cancellable = Set<AnyCancellable>()
     var dataStorage = CountdownScreenStorage()
     
@@ -21,4 +22,5 @@ class CountdownViewModel: ObservableObject {
         }
         .store(in: &cancellable)
     }
+
 }

@@ -15,6 +15,8 @@
 		8112F2132895905F00B02B2B /* CountdownSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8112F2112895905F00B02B2B /* CountdownSwiftUI.xcdatamodeld */; };
 		8112F21A289598F300B02B2B /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112F219289598F200B02B2B /* CountdownViewModel.swift */; };
 		8112F21C2895B86400B02B2B /* CountdownScreenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112F21B2895B86400B02B2B /* CountdownScreenStorage.swift */; };
+		8112F21F2896E94A00B02B2B /* RegisterCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112F21E2896E94A00B02B2B /* RegisterCountdownView.swift */; };
+		8112F2212896EC5100B02B2B /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112F2202896EC5000B02B2B /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		8112F2122895905F00B02B2B /* CountdownSwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountdownSwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		8112F219289598F200B02B2B /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
 		8112F21B2895B86400B02B2B /* CountdownScreenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownScreenStorage.swift; sourceTree = "<group>"; };
+		8112F21E2896E94A00B02B2B /* RegisterCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCountdownView.swift; sourceTree = "<group>"; };
+		8112F2202896EC5000B02B2B /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +63,11 @@
 		8112F2052895905D00B02B2B /* CountdownSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8112F229289706C400B02B2B /* Database */,
+				8112F2222897064B00B02B2B /* Presentation */,
 				8112F2062895905D00B02B2B /* CountdownSwiftUIApp.swift */,
-				8112F2082895905D00B02B2B /* ContentView.swift */,
 				8112F20A2895905F00B02B2B /* Assets.xcassets */,
-				8112F20F2895905F00B02B2B /* Persistence.swift */,
-				8112F219289598F200B02B2B /* CountdownViewModel.swift */,
-				8112F2112895905F00B02B2B /* CountdownSwiftUI.xcdatamodeld */,
 				8112F20C2895905F00B02B2B /* Preview Content */,
-				8112F21B2895B86400B02B2B /* CountdownScreenStorage.swift */,
 			);
 			path = CountdownSwiftUI;
 			sourceTree = "<group>";
@@ -77,6 +78,75 @@
 				8112F20D2895905F00B02B2B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8112F2222897064B00B02B2B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8112F2262897068400B02B2B /* RegisterScreen */,
+				8112F2232897065400B02B2B /* MainScreen */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8112F2232897065400B02B2B /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8112F2252897066C00B02B2B /* ViewModels */,
+				8112F2242897065F00B02B2B /* Views */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		8112F2242897065F00B02B2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8112F2082895905D00B02B2B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8112F2252897066C00B02B2B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8112F219289598F200B02B2B /* CountdownViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8112F2262897068400B02B2B /* RegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8112F2282897069600B02B2B /* ViewModels */,
+				8112F2272897068E00B02B2B /* Views */,
+			);
+			path = RegisterScreen;
+			sourceTree = "<group>";
+		};
+		8112F2272897068E00B02B2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8112F21E2896E94A00B02B2B /* RegisterCountdownView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8112F2282897069600B02B2B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8112F2202896EC5000B02B2B /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8112F229289706C400B02B2B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8112F21B2895B86400B02B2B /* CountdownScreenStorage.swift */,
+				8112F20F2895905F00B02B2B /* Persistence.swift */,
+				8112F2112895905F00B02B2B /* CountdownSwiftUI.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +222,9 @@
 				8112F2102895905F00B02B2B /* Persistence.swift in Sources */,
 				8112F21C2895B86400B02B2B /* CountdownScreenStorage.swift in Sources */,
 				8112F21A289598F300B02B2B /* CountdownViewModel.swift in Sources */,
+				8112F2212896EC5100B02B2B /* RegisterViewModel.swift in Sources */,
 				8112F2132895905F00B02B2B /* CountdownSwiftUI.xcdatamodeld in Sources */,
+				8112F21F2896E94A00B02B2B /* RegisterCountdownView.swift in Sources */,
 				8112F2092895905D00B02B2B /* ContentView.swift in Sources */,
 				8112F2072895905D00B02B2B /* CountdownSwiftUIApp.swift in Sources */,
 			);

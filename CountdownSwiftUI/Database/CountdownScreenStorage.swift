@@ -15,11 +15,16 @@ class CountdownScreenStorage: NSObject {
     private var frc : NSFetchedResultsController<Countdown>
     
     override init() {
-        frc = NSFetchedResultsController(fetchRequest: Countdown.fetchRequest(), managedObjectContext: PersistenceController.shared.container.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchReq = Countdown.fetchRequest()
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        fetchReq.sortDescriptors = [sort]
+        frc = NSFetchedResultsController(fetchRequest: fetchReq, managedObjectContext: PersistenceController.shared.container.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         super.init()
         frc.delegate = self
         do {
             try frc.performFetch()
+            countdowns.value = frc.fetchedObjects ?? []
+            
         } catch {
             NSLog("Oops, could not fetch songs")
         }
