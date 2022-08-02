@@ -27,9 +27,10 @@ struct PersistenceController {
     }
     
     func saveContext() {
-        if container.viewContext.hasChanges {
+        let context = container.viewContext
+        if context.hasChanges {
             do {
-                try  container.viewContext.save()
+                try  context.save()
             }
             catch {
                 fatalError("Error save context1")
